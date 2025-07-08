@@ -1,6 +1,6 @@
-import type { Country } from '@/store/cache'
+import type { CountryDetail } from '@/store/cache'
 
-export default function info ({ country }: { country: Country }) {
+export default function info ({ country }: { country: CountryDetail }) {
   return (
     <div>
         <div>
@@ -32,16 +32,26 @@ export default function info ({ country }: { country: Country }) {
             </div>
             <div className='space-y-2'>
               <p>
+                {/*
+                  El Dominio no se encuentra disponible con la api
+                  dejamos .com por defecto
+                */}
                 <b className='font-bold text-lg'>Top Level Domain: </b>
                 .com
               </p>
               <p>
                 <b className='font-bold text-lg'>Currencies: </b>
-                Euro
+                {country.currencies
+                  ? Object.values(country.currencies)
+                      .map(c => `${c.name} (${c.symbol})`)
+                      .join(', ')
+                  : 'N/A'}
               </p>
               <p>
                 <b className='font-bold text-lg'>Languages: </b>
-                English
+                {country.languages
+                  ? Object.values(country.languages).join(', ')
+                  : 'N/A'}
               </p>
             </div>
           </div>

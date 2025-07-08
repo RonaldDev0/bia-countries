@@ -1,24 +1,23 @@
 'use client'
 import { useEffect } from 'react'
-import { useCache } from '@/store/cache'
+import { useCache, CountryBasic } from '@/store/cache'
 
 import SearchBar from '@/components/searchBar'
 import Filter from '@/components/filter'
 import Card from '@/components/card'
 
 
-export default function Home () {
-  const { countries, setCache } = useCache()
+export default function HomePage() {
+  const countries = useCache((s) => s.countries)
+  const setCountries = useCache((s) => s.setCountries)
 
   useEffect(() => {
-    async function getData () {
-      const response = await fetch('https://restcountries.com/v3.1/all?fields=name,capital,flags,population,region,subregion,languages,currencies')
-      const data = await response.json()
-      setCache('countries', data)
+    if (countries.length === 0) {
+      fetch('https://restcountries.com/v3.1/all?fields=name,flags,region,population,capital')
+        .then(res => res.json())
+        .then((data: CountryBasic[]) => setCountries(data))
     }
-
-    getData()
-  }, [])
+  }, [countries.length, setCountries])
 
   return (
     <main className='px-80'>
@@ -28,7 +27,11 @@ export default function Home () {
       </div>
       <div className='grid grid-cols-4 gap-12'>
         {countries.map((country, i) => (
-          <Card key={i} country={country} />
+          <Card
+            key={i}
+            country={country}
+            priority={i < 9}
+          />
         ))}
       </div>
     </main>
