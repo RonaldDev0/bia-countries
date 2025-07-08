@@ -32,12 +32,8 @@ export default function info ({ country }: { country: CountryDetail }) {
             </div>
             <div className='space-y-2'>
               <p>
-                {/*
-                  El Dominio no se encuentra disponible con la api
-                  dejamos .com por defecto
-                */}
                 <b className='font-bold text-lg'>Top Level Domain: </b>
-                .com
+                {country.tld && country.tld.length > 0 ? country.tld.join(', ') : 'N/A'}
               </p>
               <p>
                 <b className='font-bold text-lg'>Currencies: </b>
@@ -56,14 +52,16 @@ export default function info ({ country }: { country: CountryDetail }) {
             </div>
           </div>
         </div>
-        <div className='mt-16 flex items-center gap-3'>
-          <p className='font-bold text-lg'>Border Countries:</p>
-          {['France', 'Germany', 'Netherlands'].map(country => (
-            <div key={country} className='bg-slate-800 rounded-lg px-4 py-2'>
-              {country}
-            </div>
-          ))}
-        </div>
+        {country.borders && country.borders.length > 0 && (
+          <div className='mt-16 flex items-center gap-3'>
+            <p className='font-bold text-lg'>Border Countries:</p>
+            {country.borders.map(border => (
+              <div key={border} className='bg-slate-800 rounded-lg px-4 py-2'>
+                {border}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
   )
 }

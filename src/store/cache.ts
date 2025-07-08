@@ -17,6 +17,8 @@ export type CountryDetail = {
   currencies: { [key: string]: { name: string; symbol: string } }
   population: number
   languages: { [key: string]: string }
+  tld?: string[]
+  borders?: string[]
 }
 
 type State = {

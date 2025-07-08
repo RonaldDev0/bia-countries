@@ -19,7 +19,7 @@ function DetailContent() {
     if (details[officialName]) {
       setCountry(details[officialName])
     } else {
-      fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(officialName)}?fullText=true&fields=name,capital,flags,population,region,subregion,languages,currencies`)
+      fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(officialName)}?fullText=true&fields=name,capital,flags,population,region,subregion,languages,currencies,tld,borders`)
         .then(res => res.json())
         .then((data: CountryDetail[]) => {
           if (data && data[0]) {
