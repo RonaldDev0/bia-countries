@@ -33,35 +33,25 @@ function DetailContent() {
   if (!country) return null
 
   return (
-    <main className='min-h-[calc(100vh-56px)] flex flex-col px-32 py-12'>
-      <Link
-        href='/'
-        style={{
-          background: 'var(--element-bg)',
-          color: 'var(--foreground)',
-          boxShadow: '0 2px 9px 0 rgba(0,0,0,0.05)',
-          borderRadius: '0.25rem',
-          padding: '0.5rem 2.5rem',
-          fontWeight: 300,
-          fontSize: '1.1rem',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          width: 'fit-content',
-          marginBottom: '2.5rem'
-        }}
-      >
-        <span style={{ fontSize: '1.3rem', display: 'inline-block' }}>&larr;</span>
-        Back
-      </Link>
-      <div className='flex-1 flex justify-center items-center'>
-        <div className='flex gap-24 items-center'>
+    <main className='min-h-[calc(100vh-56px)] flex flex-col px-4 py-8 md:px-16 lg:px-32'>
+      <div className='w-full flex justify-start mb-10'>
+        <Link
+          href='/'
+          className='inline-flex items-center gap-2 px-5 py-2 rounded-md font-light text-lg bg-[var(--element-bg)] text-[var(--foreground)] shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition hover:bg-[var(--chip-bg)] dark:hover:bg-[var(--chip-bg)] w-fit'
+          aria-label='Back to home'
+        >
+          <span className='text-2xl'>&larr;</span>
+          Back
+        </Link>
+      </div>
+      <div className='flex-1 flex justify-center items-center w-full'>
+        <div className='flex flex-col lg:flex-row gap-10 lg:gap-24 items-center w-full max-w-5xl mx-auto'>
           <Image
             src={country.flags.svg}
             alt={country.name.official}
             width={490}
             height={350}
-            className='rounded-lg w-[490px] h-[350px] object-cover'
+            className='rounded-lg w-full max-w-[490px] h-auto aspect-[7/5] object-cover'
             priority
           />
           <Info country={country} />

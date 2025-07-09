@@ -9,9 +9,10 @@ export default function Filter () {
 
   return (
     <select
-      className='p-3 h-full rounded-lg bg-[var(--input-bg)]'
+      className='p-3 h-full rounded-lg bg-[var(--input-bg)] text-[var(--foreground)] shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition hover:bg-[var(--chip-bg)]'
       value={region || ''}
       onChange={e => setRegion(e.target.value)}
+      aria-label='Filter by region'
     >
       <option value=''>Filter by Region</option>
       {regions.map(region => (

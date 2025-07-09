@@ -31,12 +31,12 @@ export default function HomePage() {
   })
 
   return (
-    <main className='px-80'>
-      <div className='flex my-14 h-10 justify-between'>
+    <main className='px-4 sm:px-10 md:px-20 lg:px-40 xl:px-80'>
+      <div className='flex flex-col md:flex-row my-8 md:my-14 h-auto md:h-10 justify-between gap-4'>
         <SearchBar />
         <Filter />
       </div>
-      <div className='grid grid-cols-4 gap-12'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12'>
         {filteredCountries.map((country, i) => (
           <Card
             key={i}

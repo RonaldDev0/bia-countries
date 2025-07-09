@@ -53,12 +53,14 @@ export default function info ({ country }: { country: CountryDetail }) {
           </div>
         </div>
         {country.borders && country.borders.length > 0 && (
-          <div className='mt-16 flex items-center gap-3'>
+          <div className='mt-16 flex items-center gap-3 flex-wrap'>
             <p className='font-bold text-lg'>Border Countries:</p>
             {country.borders.map(border => (
               <div
                 key={border}
-                style={{ background: 'var(--chip-bg)', color: 'var(--foreground)', borderRadius: '0.5rem', padding: '0.25rem 1rem', fontWeight: 500, fontSize: '1rem' }}
+                className='chip-border-country bg-[var(--chip-bg)] text-[var(--foreground)] rounded-lg px-4 py-1 font-medium text-base transition hover:bg-[var(--element-bg)] hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 cursor-pointer'
+                tabIndex={0}
+                aria-label={`Border country: ${border}`}
               >
                 {border}
               </div>
