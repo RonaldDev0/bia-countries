@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #ececec;
-  --foreground: #111517;
-  --element-bg: #ffffff;
-  --input-bg: #ffffff;
-  --chip-bg: #e0e0e0;
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(200, 15%, 8%);
+  --element-bg: hsl(0, 0%, 100%);
+  --input-bg: hsl(0, 0%, 100%);
+  --chip-bg: hsl(0, 0%, 52%);
   --focus-ring: #2563eb;
 }
 
@@ -17,11 +17,11 @@
 }
 
 .dark {
-  --background: #202c36;
-  --foreground: #ffffff;
-  --element-bg: #2b3844;
-  --input-bg: #2b3844;
-  --chip-bg: #3b4957;
+  --background: hsl(207, 26%, 17%);
+  --foreground: hsl(0, 0%, 100%);
+  --element-bg: hsl(209, 23%, 22%);
+  --input-bg: hsl(209, 23%, 22%);
+  --chip-bg: hsl(209, 23%, 22%);
 }
 
 body {

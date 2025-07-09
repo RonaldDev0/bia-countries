@@ -33,7 +33,7 @@ function DetailContent() {
   if (!country) return null
 
   return (
-    <main className='min-h-[calc(100vh-56px)] flex flex-col py-8'>
+    <main className='min-h-[calc(100vh-56px)] flex flex-col py-8 text-[16px] max-w-[1440px] mx-auto'>
       <div className='w-full flex justify-start mb-10 px-5 sm:px-8 md:px-16 lg:px-32 xl:px-80'>
         <Link
           href='/'
