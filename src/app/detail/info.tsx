@@ -56,7 +56,10 @@ export default function info ({ country }: { country: CountryDetail }) {
           <div className='mt-16 flex items-center gap-3'>
             <p className='font-bold text-lg'>Border Countries:</p>
             {country.borders.map(border => (
-              <div key={border} className='bg-slate-800 rounded-lg px-4 py-2'>
+              <div
+                key={border}
+                style={{ background: 'var(--chip-bg)', color: 'var(--foreground)', borderRadius: '0.5rem', padding: '0.25rem 1rem', fontWeight: 500, fontSize: '1rem' }}
+              >
                 {border}
               </div>
             ))}

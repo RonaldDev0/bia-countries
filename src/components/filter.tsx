@@ -9,7 +9,7 @@ export default function Filter () {
 
   return (
     <select
-      className='bg-slate-800 p-3 h-full rounded-lg'
+      className='p-3 h-full rounded-lg bg-[var(--input-bg)]'
       value={region || ''}
       onChange={e => setRegion(e.target.value)}
     >

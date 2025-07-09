@@ -6,7 +6,7 @@ export default function SearchBar () {
   const setSearch = useCache(s => s.setSearch)
   return (
     <input
-      className='bg-slate-800 w-96 h-full rounded-lg p-6'
+      className='w-96 h-full rounded-lg p-6 bg-[var(--input-bg)]'
       placeholder='Search for a country...'
       value={search}
       onChange={e => setSearch(e.target.value)}

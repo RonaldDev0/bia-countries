@@ -6,7 +6,9 @@ import type { CountryBasic } from '@/store/cache'
 export default function Card ({ country, priority }: { country: CountryBasic, priority?: boolean }) {
   return (
    <Link href={`/detail?country=${country.name.official}`}>
-      <div className='flex flex-col justify-center rounded-lg bg-slate-800'>
+      <div
+        className='flex flex-col justify-center rounded-lg border border-amber-300 shadow-2xl dark:border-none dark:shadow-none bg-[var(--element-bg)]'
+      >
         <Image
           src={country.flags.svg}
           alt={country.name.official}

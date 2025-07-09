@@ -2,7 +2,13 @@
 import { useEffect, useState } from 'react'
 
 export default function NavBar () {
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('theme-dark')
+      if (stored !== null) return stored === 'true'
+    }
+    return true
+  })
 
   useEffect(() => {
     const root = document.documentElement.classList
@@ -11,13 +17,16 @@ export default function NavBar () {
     } else {
       root.remove('dark')
     }
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme-dark', String(dark))
+    }
   }, [dark])
 
   return (
-    <nav className='w-full flex justify-between px-28 h-14 items-center bg-slate-700'>
+    <nav className='w-full flex justify-between px-28 h-14 items-center bg-[var(--element-bg)]'>
       <h1 className='text-xl font-bold'>Where in the world?</h1>
       <button
-        className='flex items-center gap-2 px-3 py-1 rounded-full transition-colors duration-300 focus:outline-none'
+        className='flex items-center gap-2 px-3 py-1 rounded-full transition-colors duration-300 focus:outline-none cursor-pointer'
         onClick={() => setDark(d => !d)}
         aria-label='Toggle dark mode'
       >
