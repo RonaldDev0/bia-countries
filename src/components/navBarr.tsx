@@ -23,7 +23,7 @@ export default function NavBar () {
   }, [dark])
 
   return (
-    <nav className="w-full py-4 bg-[var(--element-bg)] shadow-md">
+    <nav className='w-full py-4 bg-[var(--element-bg)] shadow-md'>
       <div className='w-full max-w-[1440px] mx-auto flex justify-between items-center px-5 sm:px-8 md:px-16 lg:px-32 xl:px-80'>
         <h1 className='text-xl font-bold'>Where in the world?</h1>
         <button
