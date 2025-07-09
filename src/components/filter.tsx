@@ -8,7 +8,7 @@ export default function Filter () {
   const setRegion = useCache(s => s.setRegion)
 
   return (
-    <div className='relative w-1/2 sm:w-64 flex items-center bg-[var(--input-bg)] text-[var(--foreground)] dark:bg-[var(--input-bg)] dark:text-[var(--foreground)] rounded-lg shadow focus-within:ring-2 focus-within:ring-blue-400 transition hover:bg-[var(--chip-bg)] h-12 md:h-14'>
+    <div className='relative w-1/2 sm:w-64 flex items-center bg-[var(--input-bg)] text-[var(--foreground)] dark:bg-[var(--input-bg)] dark:text-[var(--foreground)] rounded-lg shadow focus-within:ring-2 focus-within:ring-blue-400 transition h-12 md:h-14'>
       <select
         className='w-full h-full bg-transparent outline-none focus:outline-none ring-0 focus:ring-0 border-none text-[var(--foreground)] dark:text-[var(--foreground)] placeholder:text-gray-400 appearance-none pr-8 px-4 py-3'
         value={region || ''}
