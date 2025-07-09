@@ -23,7 +23,7 @@ export default function Filter () {
         ))}
       </select>
       <span className='absolute right-4 pointer-events-none flex items-center h-full'>
-        <svg className='w-4 h-4 text-gray-400 dark:text-gray-300' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'>
+        <svg className='w-4 h-4 text-gray-400 dark:text-gray-300' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24' data-testid='dropdown-arrow'>
           <path d='M19 9l-7 7-7-7' strokeLinecap='round' strokeLinejoin='round' />
         </svg>
       </span>
