@@ -33,8 +33,8 @@ function DetailContent() {
   if (!country) return null
 
   return (
-    <main className='min-h-[calc(100vh-56px)] flex flex-col px-4 py-8 md:px-16 lg:px-32'>
-      <div className='w-full flex justify-start mb-10'>
+    <main className='min-h-[calc(100vh-56px)] flex flex-col py-8'>
+      <div className='w-full flex justify-start mb-10 px-5 sm:px-8 md:px-16 lg:px-32 xl:px-80'>
         <Link
           href='/'
           className='inline-flex items-center gap-2 px-5 py-2 rounded-md font-light text-lg bg-[var(--element-bg)] text-[var(--foreground)] shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition hover:bg-[var(--chip-bg)] dark:hover:bg-[var(--chip-bg)] w-fit'
@@ -44,7 +44,7 @@ function DetailContent() {
           Back
         </Link>
       </div>
-      <div className='flex-1 flex justify-center items-center w-full'>
+      <div className='flex-1 flex justify-center items-center w-full px-5 sm:px-8 md:px-16 lg:px-32 xl:px-80'>
         <div className='flex flex-col lg:flex-row gap-10 lg:gap-24 items-center w-full max-w-5xl mx-auto'>
           <Image
             src={country.flags.svg}

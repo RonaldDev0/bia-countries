@@ -36,3 +36,30 @@ body {
   outline-offset: 2px;
   transition: outline 0.2s;
 }
+
+input:focus, input:focus-visible,
+textarea:focus, textarea:focus-visible,
+select:focus, select:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+select option {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--foreground);
+  transition: background 0.2s;
+}
+
+select option:hover,
+select option:checked {
+  background: var(--chip-bg);
+  color: var(--foreground);
+}
+
+select::-webkit-dropdown-menu,
+select::-webkit-list-box {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
