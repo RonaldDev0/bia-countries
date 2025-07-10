@@ -49,9 +49,9 @@ function DetailContent() {
           <Image
             src={country.flags.svg}
             alt={country.name.official}
-            width={490}
+            width={450}
             height={350}
-            className='rounded-lg w-full max-w-[490px] h-auto aspect-[7/5] object-cover'
+            className='rounded-lg w-full max-w-[450px] h-auto aspect-[7/5] object-cover'
             priority
           />
           <Info country={country} />

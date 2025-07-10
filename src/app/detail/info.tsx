@@ -2,41 +2,41 @@ import type { CountryDetail } from '@/store/cache'
 
 export default function info ({ country }: { country: CountryDetail }) {
   return (
-    <div>
+    <div className='max-w-4xl mx-auto w-full'>
         <div>
           <h1 className='font-bold text-3xl mb-8'>
             {country.name.common}
           </h1>
-          <div className='flex flex-col gap-8 md:flex-row md:gap-24'>
-            <div className='space-y-2'>
+          <div className='flex flex-col gap-8 md:flex-row md:gap-16 w-full'>
+            <div className='space-y-2 w-full md:w-1/2'>
               <p>
-                <b className='font-bold text-lg'>Native Name: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Native Name: </b>
                 {country.name.official}
               </p>
               <p>
-                <b className='font-bold text-lg'>Population: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Population: </b>
                 {country.population.toLocaleString()}
               </p>
               <p>
-                <b className='font-bold text-lg'>Region: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Region: </b>
                 {country.region}
               </p>
               <p>
-                <b className='font-bold text-lg'>Sub Region: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Sub Region: </b>
                 {country.subregion}
               </p>
               <p>
-                <b className='font-bold text-lg'>Capital: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Capital: </b>
                 {country.capital}
               </p>
             </div>
-            <div className='space-y-2 mt-6 md:mt-0'>
+            <div className='space-y-2 mt-6 md:mt-0 w-full md:w-1/2'>
               <p>
-                <b className='font-bold text-lg'>Top Level Domain: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Top Level Domain: </b>
                 {country.tld && country.tld.length > 0 ? country.tld.join(', ') : 'N/A'}
               </p>
               <p>
-                <b className='font-bold text-lg'>Currencies: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Currencies: </b>
                 {country.currencies
                   ? Object.values(country.currencies)
                       .map(c => `${c.name} (${c.symbol})`)
@@ -44,7 +44,7 @@ export default function info ({ country }: { country: CountryDetail }) {
                   : 'N/A'}
               </p>
               <p>
-                <b className='font-bold text-lg'>Languages: </b>
+                <b className='font-bold text-lg whitespace-nowrap'>Languages: </b>
                 {country.languages
                   ? Object.values(country.languages).join(', ')
                   : 'N/A'}
